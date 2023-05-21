@@ -20,6 +20,9 @@ function closemenu() {
     sidemenu.style.right = "-200px";
 }
 
+
+// ---------------Connecting Google Sheets-----------------
+
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxp6gyW-VpO8gGonwrW8ma-IW2e4cm87kZDxeRFZW3tIw3MEVKfPcBY-DCZTx6yI5k6Qw/exec'
 const form = document.forms['submit-to-google-sheet']
 const msg = document.getElementById("msg")
@@ -37,6 +40,9 @@ form.addEventListener('submit', e => {
         .catch(error => console.error('Error!', error.message))
 })
 
+
+//------------------Adding Word Animation-------------------
+
 var typed = new Typed(".typing", {
     strings: ["Web Developer", "", "Designer", "Student"],
     typeSpeed: 100,
@@ -44,13 +50,37 @@ var typed = new Typed(".typing", {
     loop: true
 });
 
+
+// -----------------Adding parallax scroll effect-------------
+
+window.addEventListener('scroll', reveal);
+
+function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
+
+    for (var i = 0; i < reveals.length; i++) {
+
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = -50;
+
+        if (revealtop < windowheight - revealpoint) {
+            reveals[i].classList.add('active');
+        }
+        else {
+            reveals[i].classList.remove('active');
+        }
+    }
+}
+
+
 // var typed = new Typed(".typing-2", {
 //     strings: ["Portfolio."],
 //     typeSpeed: 100,
 //     backSpeed: 60,
 // });
 
-// -----------creative color changing scrollbar------- 
+// -----------creative color changing scrollbar-------
 
 // let progress = document.getElementById('progressbar')
 // let totalHeight = document.body.scrollHeight - window.innerHeight
